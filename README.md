@@ -1,6 +1,6 @@
 # OctoPrint-Fancontrol
 
-**TODO:** Describe what your plugin does.
+**TODO:** THIS PLUGIN IS NOT YET FUNCTIONING AS SUPPOSED.
 
 ## Setup
 
