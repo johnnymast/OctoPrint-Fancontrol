@@ -1,0 +1,60 @@
+<h3>OctoFan</h3>
+
+<form class="form-horizontal">
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Enable OctoFan') }}</label>
+        <div class="controls">
+
+            <input type="checkbox"
+                   data-bind="checked: settings.plugins.octofan.enabled">
+        </div>
+    </div>
+
+     <div class="control-group">
+        <label class="control-label">{{ _('GPIO Pin') }}</label>
+        <div class="controls">
+
+            <input type="text"
+                   data-bind="value: settings.plugins.octofan.gpio_pin">
+
+             <span class="help-block">{{ _('bla bla bla') }}</span>
+
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Enable support') }}</label>
+        <div class="controls">
+
+            {#            <label class="checkbox">#}
+            {#                <input type="checkbox"#}
+            {#                       data-bind="checked: settings.plugins.octofan.enabled"> {{ _('Enable the virtual printer') }}#}
+            {#                <span class="help-block">{{ _('If enabled, an additional serial port <code>VIRTUAL</code> will be available for connecting, backed by a fake printer implementation. Useful for development.') }}</span>#}
+            {#            </label>#}
+
+            <label class="radio">
+                <input
+                        type="radio"
+                        value="s"
+                        data-bind="checked: settings.plugins.octofan.print_mode"
+                        class="required"
+                        title="*">
+                When OctoPrint starts
+                <span class="help-block">{{ _('Your fans will automatically start when OctoPrint starts and turns off when Octoprint stops.') }}</span>
+
+            </label>
+
+            <label class="radio">
+                <input type="radio"
+                       data-bind="checked: settings.plugins.octofan.print_mode"
+                       value="p"
+                       class="required"
+                       title="*">
+                When printing
+
+                <span class="help-block">{{ _('Your fan will be automatically start when a new print starts and stops after printing.') }}</span>
+            </label>
+        </div>
+    </div>
+</form>
