@@ -8,7 +8,7 @@ from __future__ import absolute_import
 # as necessary.
 #
 # Take a look at the documentation on what other plugin mixins are available.
-
+import os
 import octoprint.plugin
 from octoprint.events import Events
 from flask_babel import gettext # !! Note todo
@@ -66,6 +66,9 @@ class FancontrolPlugin(octoprint.plugin.StartupPlugin,
 
 		# self._logger.info("Got event " + event + " Payload " + pprint.pformat(payload))
 		self._logger.info("Got event " + event )
+
+	def is_gpio_enabled(self):
+		os.path.isfile('./path_of_file')
 
 	def is_enabled(self):
 		return self._settings.get_boolean(["enabled"]) == True
